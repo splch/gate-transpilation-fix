@@ -1,0 +1,3 @@
+[submodule "qiskit-ionq"]
+	path = qiskit-ionq
+	url = https://github.com/qiskit-community/qiskit-ionq.git
