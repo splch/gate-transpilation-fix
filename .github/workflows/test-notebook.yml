@@ -21,11 +21,6 @@ jobs:
         pip install nbconvert jupyter
 
     - name: Execute Jupyter Notebook
+      env:
+        IONQ_API_KEY: ${{ secrets.IONQ_API_KEY }}
       run: jupyter nbconvert --to notebook --execute demo.ipynb
-
-    - name: Check for errors
-      run: |
-        if grep -q "Traceback" demo.nbconvert.ipynb; then
-          echo "Error found in notebook execution"
-          exit 1
-        fi
